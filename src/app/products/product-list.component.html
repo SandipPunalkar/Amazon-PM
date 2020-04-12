@@ -3,7 +3,7 @@
   <div class="card-body">
     <div class="row">
       <div class="col-md-2">Filter by:</div>
-      <div class="col-md-4"><input type="text" /></div>
+      <div class="col-md-4"><input [(ngModel)]="listFilter" type="text" /></div>
     </div>
 
     <div class="roww">
@@ -38,12 +38,13 @@
                 [src]="product.imageUrl"
                 [style.width.px]="imageWidth"
                 [style.margin.px]="imageMargin"
+                [title]="product.productName | uppercase"
               />
             </td>
-            <td>{{ product.productName }}</td>
+            <td>{{ product.productName | uppercase }}</td>
             <td>{{ product.productCode }}</td>
             <td>{{ product.releaseDate }}</td>
-            <td>{{ product.price }}</td>
+            <td>{{ product.price | currency | lowercase }}</td>
             <td>{{ product.starRating }}</td>
           </tr>
         </tbody>
