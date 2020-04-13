@@ -6,9 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProductListComponent } from './products/product-list.component';
+import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ProductListComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    ProductListComponent,
+    ConvertToSpacesPipe,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
