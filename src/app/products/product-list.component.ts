@@ -38,9 +38,30 @@ export class ProductListComponent implements OnInit {
     this.showImage = !this.showImage;
   }
 
-  listFilter = 'cart';
+  private _listFilter: string;
+  public get listFilter(): string {
+    return this._listFilter;
+  }
+  public set listFilter(value: string) {
+    this._listFilter = value;
+    this.filteredProducts = this.listFilter
+      ? this.performFilter(this.listFilter)
+      : this.products;
+  }
 
-  constructor() {}
+  performFilter(listFilter: string): IProduct[] {
+    listFilter = listFilter.toLocaleLowerCase();
+    return this.products.filter(
+      (product: IProduct) =>
+        product.productName.toLocaleLowerCase().indexOf(listFilter) !== -1
+    );
+  }
+  filteredProducts: IProduct[];
+
+  constructor() {
+    this.filteredProducts = this.products;
+    this.listFilter = 'cart';
+  }
 
   ngOnInit(): void {
     console.log('In OnInit');
