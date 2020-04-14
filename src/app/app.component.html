@@ -1,0 +1,26 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <a class="navbar-brand" href="#">{{ pageTitle }}</a>
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a
+        class="nav-link active"
+        [routerLink]="['/home']"
+        routerLinkActive="router-link-active"
+        >Home</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        [routerLink]="['/products']"
+        routerLinkActive="router-link-active"
+        >Products</a
+      >
+    </li>
+  </ul>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
